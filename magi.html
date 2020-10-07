@@ -1,0 +1,242 @@
+<div class="main">
+
+<!-- LOGO SECTION -->
+  <div class="logo section"></div>
+
+<!-- NAME SECTION -->
+  <div class="name section">
+    <div class="section-small flex-center">
+        <label>Name: </label>
+        <input name="attr_character_name" type="text">
+    </div>
+
+    <div class="section-normal flex-center">
+        <label>Base Abilities:</label>
+        <input name="attr_base_abilities" type="number" value="1" />
+    </div>
+  </div>
+
+<!-- MAIN STAT SECTION -->
+
+  <div class="stats section">
+    <div class="stat-block flex-center">
+      <div class="stat-block-bakg">
+        <label>Physicality</label>
+        <input name="attr_physicality" type="number" value="1" min="0" />
+      </div>
+      <button name="roll_physicality" type="roll" value="&{template:default} {{name=Physicality}} {{Result=[[d6]]}}"></button>
+    </div>
+
+    <div class="stat-block flex-center">
+        <div class="stat-block-bakg">
+            <label>Agility</label>
+            <input name="attr_agility" type="number" value="1" min="0" />
+        </div>
+        <button name="roll_agility" type="roll" value="&{template:default} {{name=Agility}} {{Result=[[d6]]}}"></button>
+    </div>
+
+    <div class="stat-block flex-center">
+        <div class="stat-block-bakg">
+            <label>Mentality</label>
+            <input name="attr_mentality" type="number" value="1" min="0" />
+        </div>
+        <button name="roll_charm" type="roll" value="&{template:default} {{name=Charm}} {{Result=[[d6]]}}"></button>
+    </div>
+
+    <div class="stat-block flex-center">
+        <div class="stat-block-bakg">
+            <label>Arcana</label>
+            <input name="attr_arcana" type="number" value="1" min="0" />
+        </div>
+        <button name="roll_arcana" type="roll" value="&{template:default} {{name=Arcana}} {{Result=[[d6]]}}"></button>
+    </div>
+
+    <div class="stat-block flex-center">
+        <div class="stat-block-bakg">
+            <label>Empathy</label>
+            <input name="attr_empathy" type="number" value="1" min="0" />
+        </div>
+        <button name="roll_empathy" type="roll" value="&{template:default} {{name=Empathy}} {{Result=[[d6]]}}"></button>
+    </div>
+
+    <div class="stat-block flex-center">
+        <div class="stat-block-bakg">
+            <label>Luck</label>
+            <input name="attr_luck" type="number" value="1" min="0" />
+        </div>
+        <button name="roll_luck" type="roll" value="&{template:default} {{name=Luck}} {{Result=[[d6]]}}"></button>
+    </div>
+    
+  </div>
+  
+<!-- Specializations -->
+  <div class="spec section">
+      <div class="spec-block flex-center">
+            <button name="roll_anima" type="roll" value="&{template:default} {{name=Anima/Obitus}} {{Result=[[d6]]}}"></button>
+            <div class="spec-block-bakg">
+                <label>Anima / Obitus</label>
+                <input name="attr_anima" type="number" value="0" min="0" />
+            </div>
+        </div>
+        
+      <div class="spec-block flex-center">
+            <button name="roll_flamma" type="roll" value="&{template:default} {{name=Flamma/Frigus}} {{Result=[[d6]]}}"></button>
+            <div class="spec-block-bakg">
+                <label>Flamma / Frigus</label>
+                <input name="attr_flamma" type="number" value="0" min="0" />
+            </div>
+      </div>
+      
+      <div class="spec-block flex-center">
+            <button name="roll_physica" type="roll" value="&{template:default} {{name=Physica/Animus}} {{Result=[[d6]]}}"></button>
+            <div class="spec-block-bakg">
+                <label>Physica / Animus</label>
+                <input name="attr_physica" type="number" value="0" min="0" />
+            </div>
+      </div>
+      
+      <div class="spec-block flex-center">
+            <button name="roll_tellis" type="roll" value="&{template:default} {{name=Tellis/Aerum}} {{Result=[[d6]]}}"></button>
+            <div class="spec-block-bakg">
+                <label>Tellis / Aerum</label>
+                <input name="attr_tellis" type="number" value="0" min="0" />
+            </div> 
+      </div>
+      
+      <div class="spec-block flex-center">
+            <button name="roll_tellis" type="roll" value="&{template:default} {{name=Tempori/Spatium}} {{Result=[[d6]]}}"></button>
+            <div class="spec-block-bakg">
+                <label>Tempori / Spatium</label>
+                <input name="attr_tempori" type="number" value="0" min="0" />
+            </div>
+      </div>
+      
+      <div class="spec-block flex-center">
+            <button name="roll_electrum" type="roll" value="&{template:default} {{name=Electrum/Magnetismus}} {{Result=[[d6]]}}"></button>
+            <div class="spec-block-bakg">
+                <label>Electrum / Magnetismus</label>
+                <input name="attr_electrum" type="number" value="0" min="0" />
+            </div>
+      </div>
+  </div>
+  
+<!-- Verso -->
+  <div class="verso section">
+      <div class="verso-block flex-center">
+            <button name="roll_verso" type="roll" value="&{template:default} {{name=Verso}} {{Result=[[d6]]}}"></button>
+            <div class="verso-block-bakg">
+                <label>Verso</label>
+                <input name="attr_verso" type="number" value="0" min="0" />
+            </div>
+        </div>
+    </div>
+    
+
+<!-- lifeforce -->
+  <div class="lifeforce section">
+    <div class="stat-block flex-center">
+      <label>Max Life Force</label>
+      <input name="attr_max_life_force" type="number" value="20" max="50" min="0">
+      <label>Life Force Current</label>
+      <span name="attr_lifeforce_current_display">20</span>
+    </div>
+    <div class="lifeforce-block flex-left">
+        
+        
+        <input name="attr_lifeforce_1" type="checkbox" value="1" checked="true" />
+        <input name="attr_lifeforce_2" type="checkbox" value="2" checked="true" />
+        <input name="attr_lifeforce_3" type="checkbox" value="3" checked="true" />
+        <input name="attr_lifeforce_4" type="checkbox" value="4" checked="true" />
+        <input name="attr_lifeforce_5" type="checkbox" value="5" checked="true" />
+        <input name="attr_lifeforce_6" type="checkbox" value="6" checked="true" />
+        <input name="attr_lifeforce_7" type="checkbox" value="7" checked="true" />
+        <input name="attr_lifeforce_8" type="checkbox" value="8" checked="true" />
+        <input name="attr_lifeforce_9" type="checkbox" value="9" checked="true" />
+        <input name="attr_lifeforce_10" type="checkbox" value="10" checked="true" />
+        <input name="attr_lifeforce_11" type="checkbox" value="11" checked="true" />
+        <input name="attr_lifeforce_12" type="checkbox" value="12" checked="true" />
+        <input name="attr_lifeforce_13" type="checkbox" value="13" checked="true" />
+        <input name="attr_lifeforce_14" type="checkbox" value="14" checked="true" />
+        <input name="attr_lifeforce_15" type="checkbox" value="15" checked="true" />
+        <input name="attr_lifeforce_16" type="checkbox" value="16" checked="true" />
+        <input name="attr_lifeforce_17" type="checkbox" value="17" checked="true" />
+        <input name="attr_lifeforce_18" type="checkbox" value="18" checked="true" />
+        <input name="attr_lifeforce_19" type="checkbox" value="19" checked="true" />
+        <input name="attr_lifeforce_20" type="checkbox" value="20" checked="true" />
+        <input name="attr_lifeforce_21" type="checkbox" value="21" />
+        <input name="attr_lifeforce_22" type="checkbox" value="22" />
+        <input name="attr_lifeforce_23" type="checkbox" value="23" />
+        <input name="attr_lifeforce_24" type="checkbox" value="24" />
+        <input name="attr_lifeforce_25" type="checkbox" value="25" />
+        <input name="attr_lifeforce_26" type="checkbox" value="26" />
+        <input name="attr_lifeforce_27" type="checkbox" value="27" />
+        <input name="attr_lifeforce_28" type="checkbox" value="28" />
+        <input name="attr_lifeforce_29" type="checkbox" value="29" />
+        <input name="attr_lifeforce_30" type="checkbox" value="30" />
+        <input name="attr_lifeforce_31" type="checkbox" value="31" />
+        <input name="attr_lifeforce_32" type="checkbox" value="32" />
+        <input name="attr_lifeforce_33" type="checkbox" value="33" />
+        <input name="attr_lifeforce_34" type="checkbox" value="34" />
+        <input name="attr_lifeforce_35" type="checkbox" value="35" />
+        <input name="attr_lifeforce_36" type="checkbox" value="36" />
+        <input name="attr_lifeforce_37" type="checkbox" value="37" />
+        <input name="attr_lifeforce_38" type="checkbox" value="38" />
+        <input name="attr_lifeforce_39" type="checkbox" value="39" />
+        <input name="attr_lifeforce_40" type="checkbox" value="40" />
+        <input name="attr_lifeforce_41" type="checkbox" value="41" />
+        <input name="attr_lifeforce_42" type="checkbox" value="42" />
+        <input name="attr_lifeforce_43" type="checkbox" value="43" />
+        <input name="attr_lifeforce_44" type="checkbox" value="44" />
+        <input name="attr_lifeforce_45" type="checkbox" value="45" />
+        <input name="attr_lifeforce_46" type="checkbox" value="46" />
+        <input name="attr_lifeforce_47" type="checkbox" value="47" />
+        <input name="attr_lifeforce_48" type="checkbox" value="48" />
+        <input name="attr_lifeforce_49" type="checkbox" value="49" />
+        <input name="attr_lifeforce_50" type="checkbox" value="50" />
+        <input name="attr_lifeforce_current" type="hidden" value="20" />
+    </div>
+  </div>
+
+</div>
+
+<input name="attr_strength_bonus" type="hidden" value="0">
+<input name="attr_intelligence_bonus" type="hidden" value="0">
+<input name="attr_charm_bonus" type="hidden" value="0">
+<input name="attr_arcana_bonus" type="hidden" value="0">
+<input name="attr_grace_bonus" type="hidden" value="0">
+
+
+<!-- ---------------------------SHEET WORKERS----------------- -->
+
+<script type="text/worker">
+
+const int = score => parseInt(score, 10) || 0;
+
+// Auto-calculates & updates 'Stat Bonus' based on changes to corresponding 'Base Stat',
+// according to the table on page 5 of the Rulebook.
+// If the Base stat is less than 1, the sheet sets the bonus to "-2"
+
+const stats = ["strength", "intelligence", "charm", "arcana", "grace"];
+stats.forEach(stat => {
+    on(`change:${stat}`, () => {
+        getAttrs([stat], values => {
+            const stat_base = int(values[stat]);
+            console.log(stat_base);
+            let stat_bonus = 0;
+            if (stat_base >= 17) stat_bonus = "+4";
+            else if (stat_base >= 16) stat_bonus = "+3";
+            else if (stat_base >= 13) stat_bonus = "+2";
+            else if (stat_base >= 9) stat_bonus = "+1";
+            else if (stat_base >= 7) stat_bonus = "0";
+            else if (stat_base >= 5) stat_bonus = "-1";
+            else if (stat_base >= 1) stat_bonus = "-2";
+            else stat_bonus = "-2";
+            
+            setAttrs({
+                [`${stat}_bonus`]: stat_bonus
+            });
+        });
+    });
+});
+
+</script>
