@@ -1,0 +1,413 @@
+/*------------------------------------------------*\
+  #GENERAL
+\*------------------------------------------------*/
+
+
+/* --------- Text ------------- */
+
+span.sheet-bold{
+  font-weight: 800;
+  font-size: medium;
+}
+
+label {
+  margin: 5px 0px 5px 0px;
+  font-size: 1.1em;
+}
+
+
+/* --------- Inputs ------------- */
+
+input[type="text"] {
+  background-color: transparent;
+  border-style: none none solid none;
+  border-color: black;
+  color: white;
+}
+
+input[type="number"] {
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-align: center;
+  height: 45px;
+}
+
+textarea {
+  background-color: transparent;
+  width: 89%;
+  height: 70%;
+  margin-right: 15px;
+}
+
+input[type="checkbox"].sheet-checkbox {
+  border-style: solid black;
+  border-radius: 0px;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="number"]:focus{
+  background-color: #34a1eb;
+  color: white;
+}
+
+/* -----Hides up/down buttons on numberfields that don't need them ---*/
+
+input[type=number].sheet-ref::-webkit-inner-spin-button,
+input[type=number].sheet-ref::-webkit-outer-spin-button,
+input[type=number].sheet-txtfield::-webkit-inner-spin-button,
+input[type=number].sheet-txtfield::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  color: white;
+}
+input[type=number].sheet-ref,
+input[type=number].sheet-txtfield {
+  -moz-appearance: textfield;
+  color: white;
+}
+
+/* ------- Buttons ---------- */
+
+button[type="roll"]:not(.sheet-small){
+  color: black;
+  height: 30px;
+  width: 30px;
+  /*margin-left: 15px;*/
+}
+
+button[type="roll"]:not(.sheet-small)::before{
+  font-size: 1.4em;
+}
+
+
+/*-----------------------------------------------------------------*\
+  #SECTIONS
+\*-----------------------------------------------------------------*/
+
+
+/* --------- General Section Styling ------------- */
+.sheet-flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.sheet-flex-middle {
+  display: flex;
+  justify-content: center;
+}
+
+.sheet-flex-down {
+  flex-flow: column nowrap;
+}
+
+.sheet-section {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/*  ----- Character Sheet Structure -------
+'.sheet-main' defines the sheet's general structure and dimensions using CSS Grid.
+It uses 'Grid template areas' to name  each sheet section,
+so that they can be positioned in the grid easily,
+ while also providing a human-readable overview. */
+div.sheet-main {
+  display: grid;
+  grid-template-columns: 3.5fr 2.2fr;
+  grid-template-rows: 0.5fr 1fr 1fr;
+  grid-template-areas:"logo       name"
+                      "stats      spec"
+                      "lifeforce  verso";
+  grid-gap: 25px;
+  /*
+  width:    850px;
+  height:   1375px;
+  */
+  background-image: url(https://github.com/aiqueneldar/magi_character_sheet/raw/master/character_sheet_bg.jpg);
+  background-size: 850px 1375px; /* Sets the sheet border image to same size as sheet */
+  background-repeat: no-repeat;
+}
+
+/* Section-specific CSS is written in a way that removes the need to define classes
+on each individual   */
+
+/* LOGO SECTION */
+
+div.sheet-logo{
+  grid-area: logo;
+  background-image: url(https://github.com/aiqueneldar/magi_character_sheet/raw/master/magi_logo.png);
+  background-size: 295px 180px;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+
+
+/* STATS SECTION */
+
+div.sheet-stats{
+  grid-area: stats;
+  margin-left: 15px;
+  color: white;
+}
+
+div.sheet-stats div.sheet-stat-block{
+  width: 80%;
+  color: white;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+div.sheet-stats div.sheet-stat-block-bakg{
+    background: #00053b;
+    border-radius: 8px;
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.sheet-stats div.sheet-stat-block label{
+  width: 190px;
+  padding-left: 10px;
+  color: white;
+}
+
+div.sheet-stats input,
+div.sheet-stats span{
+  width: 65px;
+  font-size: 20px;
+  font-weight: 600;
+
+  padding-left: 15px;
+}
+
+div.sheet-stats span{
+  padding-top: 15px;
+  padding-left: 15px;
+  color: white;
+}
+
+
+
+/* LIFEFORCE SECTION */
+
+div.sheet-lifeforce{
+    grid-area: lifeforce;
+    width: 350px;
+    height: min-content;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    background: #00053b;
+    border-radius: 8px;
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 0, 0.75);
+}
+
+div.sheet-lifeforce div.sheet-stat-block{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-right: 10px;
+    color: white;
+}
+
+div.sheet-lifeforce div.sheet-lifeforce-block{
+    display: grid;
+    /* 10 columns with checkboxes */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 0px auto;
+}
+
+div.sheet-lifeforce div.sheet-lifeforce-block label{
+    text-align: left;
+    color: white;
+    padding-left: 0px;
+}
+
+div.sheet-lifeforce label{
+  width: 220px;
+  text-align: left;
+  color: white;
+  padding-left: 10px;
+}
+
+div.sheet-lifeforce div{
+  padding-bottom: 5px;
+}
+
+div.sheet-lifeforce span {
+    height: 45px;
+    width: 55px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.sheet-lifeforce input{
+  height: 45px;
+  width: 55px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  padding-left: 15px;
+}
+
+div.sheet-lifeforce input[type=checkbox]{
+    width: 21px;
+    height: 21px;
+    text-align: center;
+    font-size: 1em;
+    margin: 5px;
+}
+
+div.sheet-lifeforce hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  width: 110px;
+}
+
+
+
+/* NAME SECTION */
+
+div.sheet-name{
+  grid-area: name;
+  padding-top: 35px;
+  padding-right: 15px;
+}
+
+div.sheet-name div.sheet-section-small{
+    background: #00053b;
+    border-radius: 8px;
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 0, 0.75);
+    width: 100%;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+div.sheet-name div.sheet-section-normal{
+    background: #00053b;
+    border-radius: 8px;
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 0, 0.75);
+    width: 100%;
+    color: white;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+div.sheet-name label{
+    grid-area: label
+    width: 50px;
+    padding-left: 15px;
+    color: white;
+}
+
+div.sheet-name input[type=text]{
+  grid-area: name
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+div.sheet-name input[type=number]{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+    
+
+/* SPECIALIZATION SECTION */
+
+div.sheet-spec{
+    grid-area: spec;
+}
+
+div.sheet-spec div.sheet-spec-block{
+  width: 80%;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+div.sheet-spec div.sheet-spec-block-bakg{
+    background: #00053b;
+    border-radius: 8px;
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.sheet-spec div.sheet-spec-block label{
+  width: 190px;
+  padding-left: 10px;
+  color: white;
+}
+
+div.sheet-spec input,
+div.sheet-spec span{
+  width: 65px;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 15px;
+}
+
+
+/* VERSO SECTION */
+
+div.sheet-verso{
+    grid-area: verso;
+}
+
+div.sheet-verso div.sheet-verso-block{
+  width: 80%;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+div.sheet-verso div.sheet-verso-block-bakg{
+    background: #00053b;
+    border-radius: 8px;
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.sheet-verso div.sheet-verso-block label{
+  width: 190px;
+  padding-left: 10px;
+  color: white;
+}
+
+div.sheet-verso input,
+div.sheet-verso span{
+  width: 65px;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 15px;
+}
