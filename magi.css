@@ -130,6 +130,7 @@ div.sheet-main {
   background-image: url(https://github.com/aiqueneldar/magi_character_sheet/raw/master/character_sheet_bg.jpg);
   background-size: 850px 1375px; /* Sets the sheet border image to same size as sheet */
   background-repeat: no-repeat;
+  max-width: 850px;
 }
 
 /* Section-specific CSS is written in a way that removes the need to define classes
@@ -341,6 +342,7 @@ div.sheet-name input[type=number]{
 
 div.sheet-spec{
     grid-area: spec;
+    padding-right: 15px;
 }
 
 div.sheet-spec div.sheet-spec-block{
@@ -379,6 +381,7 @@ div.sheet-spec span{
 
 div.sheet-verso{
     grid-area: verso;
+    padding-right: 15px;
 }
 
 div.sheet-verso div.sheet-verso-block{
